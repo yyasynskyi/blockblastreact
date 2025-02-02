@@ -1,0 +1,21 @@
+.board {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 1fr);
+  grid-template-rows: repeat(auto-fit, 1fr);
+  //border: 1px solid white;
+}
+
+.row {
+  display: flex;
+
+}
+
+.cell {
+  width: 50px;
+  height: 50px;
+  border: 1px solid white;
+  
+  &.smth {
+    background-color: #fff;
+  }
+}
