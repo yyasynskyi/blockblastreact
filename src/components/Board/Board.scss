@@ -16,6 +16,11 @@
   border: 1px solid white;
   
   &.smth {
-    background-color: #fff;
+    background-color: red;
+  }
+
+  &.preview {
+    background-color: red ;
+    opacity: 0.5;
   }
 }
