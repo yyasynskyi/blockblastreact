@@ -9,62 +9,48 @@ const Game = () => {
 
 
     const [map, setMap] = useState(initialMap)
-
-    const I = {
-        bloco: [
+    const shapes = {
+        I: [
             [0, 0, 0, 0],
             [1, 1, 1, 1],
             [0, 0, 0, 0],
             [0, 0, 0, 0]
-        ]
-    };
-
-    const O = {
-        bloco: [
+        ],
+        O:  [
             [1, 1],
             [1, 1]
-        ]
-    };
-
-    const T = {
-        bloco: [
+        ],
+        T:  [
             [0, 0, 0],
             [1, 1, 1],
             [0, 1, 0]
-        ]
-    };
-
-    const J = {
-        bloco: [
+        ],
+        J: [
             [0, 1, 0],
             [0, 1, 0],
             [1, 1, 0]
-        ]
-    };
-
-    const L = {
-        bloco: [
+        ],
+        L: [
             [0, 1, 0],
             [0, 1, 0],
             [0, 1, 1]
-        ]
-    };
-
-    const S = {
-        bloco: [
+        ],
+        S: [
             [0, 1, 1],
             [1, 1, 0],
             [0, 0, 0]
-        ]
-    };
-
-    const Z = {
-        bloco: [
+        ],
+        Z:  [
             [1, 1, 0],
             [0, 1, 1],
             [0, 0, 0]
         ]
-    };
+    }
+
+    const getRandomShape = () => {
+        const keys = Object.keys(shapes);
+        return shapes[keys[ keys.length * Math.random() << 0]];
+    }
 
     const renderShape = (shape, startX, startY) => {
         let inMap = map.slice()
@@ -83,7 +69,7 @@ const Game = () => {
     return (
         <>
             <Board map={map} renderShape={renderShape} />
-            <button onClick={() => renderShape(Z.bloco, 1, 1)}>Shape</button>
+            <button onClick={() => renderShape(getRandomShape(), 1, 1)}>Shape</button>
         </>
     );
 };
